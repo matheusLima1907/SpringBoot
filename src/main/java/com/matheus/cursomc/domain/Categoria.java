@@ -3,9 +3,17 @@ package com.matheus.cursomc.domain;
 import java.io.Serializable;
 import java.util.Objects;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+@Entity
 public class Categoria implements Serializable {
 	private static final long serialVersionUID = 1L;
 	
+	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY)//metodo de criação de tabela no banco utilizando JPA
 	//por padrão os atributos são privados porém tem get e set
 	private Integer id;
 	private String nome;
